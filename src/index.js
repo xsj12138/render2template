@@ -3,10 +3,10 @@ const traverse = require('@babel/traverse')
 const fs = require('fs-extra')
 const MyParser = require('./Parser')
 const path = require('path')
-const staticBasePath = '../../../检查员信息管理/源码/webpack/src/views/taskBench/daily-examine/entrance'
-const filePath = process.argv[2] || 'App-render.js'
+const staticBasePath = './demo'
+const filePath = process.argv[2] || 'demo.js'
 const outputPath = process.argv[3] || 'output'
-const basePath = process.argv[4] ? process.argv[4] : process.argv[2] ?  staticBasePath : ''
+const basePath = process.argv[4] ? process.argv[4] : staticBasePath//process.argv[2] ? staticBasePath : ''
 
 fs.readFile(path.resolve(__dirname, basePath, filePath), 'utf-8', (err, data) => {
   if (!err && data) {

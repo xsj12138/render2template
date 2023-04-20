@@ -1,5 +1,5 @@
 const Transformer = require('./Transformer')
-var vueBeautify = require('vue-beautify');
+const vueBeautify = require('vue-beautify');
 const selfClose = ['br', 'hr', 'area', 'base', 'img', 'input', 'link', 'meta', 'basefont', 'param', 'col', 'frame', 'embed', 'keygen', 'source']
 class Parser {
   constructor(renderAst, staticAst) {
@@ -13,7 +13,7 @@ class Parser {
   init() {
     this.transformStatic()
     this.transformRender()
-    var result = vueBeautify(this.parser(), {
+    const result = vueBeautify(this.parser(), {
       "indent_size": "2",
       "indent_char": " ",
       "max_preserve_newlines": "-1",
